@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalmed Billing | Medical Billing &amp; Revenue Cycle Management</title>
+<meta name="description" content="Kalmed Billing helps medical practices get paid faster with end-to-end claims management, denial prevention, and HIPAA-compliant revenue cycle services, plus practice management, revenue consulting, and healthcare technology consulting.">
+<style>
+  :root {
+    --navy: #0b2a4a;
+    --teal: #0e7c7b;
+    --teal-dark: #0a5f5e;
+    --teal-light: #e6f4f3;
+    --ink: #1c2b3a;
+    --muted: #5a6b7c;
+    --line: #e3eaf0;
+    --bg: #f7fafb;
+    --white: #ffffff;
+    --radius: 14px;
+    --shadow: 0 10px 30px rgba(11,42,74,.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 { color: var(--navy); line-height: 1.2; font-weight: 700; }
+  h1 { font-size: 48px; letter-spacing: -1px; }
+  h2 { font-size: 34px; letter-spacing: -0.5px; margin-bottom: 14px; }
+  h3 { font-size: 20px; margin-bottom: 8px; }
+  p { color: var(--muted); }
+  section { padding: 88px 0; }
+  .eyebrow {
+    display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--teal); margin-bottom: 12px;
+  }
+  .section-sub { font-size: 18px; max-width: 640px; margin-bottom: 48px; }
+
+  /* ===== Nav ===== */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,.92); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-mark {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--teal), var(--navy));
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 800; font-size: 17px;
+  }
+  .logo-text { font-size: 19px; font-weight: 800; color: var(--navy); letter-spacing: -0.3px; }
+  .logo-text span { color: var(--teal); }
+  .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--ink); font-size: 15px; font-weight: 600; }
+  .nav-links a:hover { color: var(--teal); }
+  .btn {
+    display: inline-block; padding: 13px 26px; border-radius: 999px;
+    font-weight: 700; font-size: 15px; text-decoration: none; transition: all .18s ease;
+  }
+  .btn-primary { background: var(--teal); color: #fff; }
+  .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
+  .btn-outline { border: 2px solid rgba(255,255,255,.7); color: #fff; }
+  .btn-outline:hover { background: rgba(255,255,255,.12); }
+  .btn-navy { background: var(--navy); color: #fff; }
+  .btn-navy:hover { background: #123a63; }
+
+  /* ===== Hero ===== */
+  .hero {
+    background: linear-gradient(160deg, var(--navy) 0%, #0f3a5f 55%, var(--teal-dark) 100%);
+    color: #fff; padding: 110px 0 90px; position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content: ""; position: absolute; right: -160px; top: -160px;
+    width: 480px; height: 480px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,.12), transparent 65%);
+  }
+  .hero h1 { color: #fff; max-width: 720px; margin-bottom: 20px; }
+  .hero h1 em { font-style: normal; color: #7fe3d8; }
+  .hero p { color: rgba(255,255,255,.82); font-size: 19px; max-width: 600px; margin-bottom: 36px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    margin-top: 72px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,.18);
+  }
+  .stat strong { display: block; font-size: 34px; font-weight: 800; color: #fff; }
+  .stat span { font-size: 14px; color: rgba(255,255,255,.7); }
+
+  /* ===== Trust bar ===== */
+  .trustbar { padding: 26px 0; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .trustbar .wrap { display: flex; align-items: center; justify-content: center; gap: 36px; flex-wrap: wrap; }
+  .trustbar span { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--muted); }
+  .trustbar svg { flex: none; }
+
+  /* ===== Services ===== */
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .card {
+    background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 32px 28px; box-shadow: var(--shadow);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(11,42,74,.13); }
+  .card .icon {
+    width: 52px; height: 52px; border-radius: 12px; background: var(--teal-light);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+  }
+  .card p { font-size: 15px; }
+
+  /* ===== Why us ===== */
+  .why { background: var(--bg); }
+  .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .why-list { list-style: none; display: grid; gap: 22px; }
+  .why-list li { display: flex; gap: 16px; }
+  .check {
+    flex: none; width: 28px; height: 28px; border-radius: 50%;
+    background: var(--teal); color: #fff; display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 14px; margin-top: 3px;
+  }
+  .why-list strong { display: block; color: var(--navy); font-size: 17px; margin-bottom: 3px; }
+  .why-list li div:last-child { color: var(--muted); font-size: 15px; }
+  .why-panel {
+    background: linear-gradient(150deg, var(--navy), var(--teal-dark));
+    border-radius: 20px; padding: 44px 40px; color: #fff;
+  }
+  .why-panel h3 { color: #fff; font-size: 24px; margin-bottom: 12px; }
+  .why-panel p { color: rgba(255,255,255,.8); font-size: 15px; margin-bottom: 28px; }
+  .panel-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .metric { background: rgba(255,255,255,.1); border-radius: 12px; padding: 18px; }
+  .metric strong { display: block; font-size: 26px; color: #7fe3d8; }
+  .metric span { font-size: 13px; color: rgba(255,255,255,.75); }
+
+  /* ===== HIPAA ===== */
+  .hipaa-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .hipaa-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .badge {
+    border: 1px solid var(--line); border-radius: 12px; padding: 20px;
+    display: flex; align-items: center; gap: 12px; background: var(--white);
+  }
+  .badge svg { flex: none; }
+  .badge strong { font-size: 14px; color: var(--navy); display: block; }
+  .badge span { font-size: 12.5px; color: var(--muted); }
+
+  /* ===== Process ===== */
+  .process { background: var(--bg); }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: step; }
+  .step { position: relative; padding: 28px 22px; background: var(--white); border-radius: var(--radius); border: 1px solid var(--line); }
+  .step::before {
+    counter-increment: step; content: counter(step);
+    display: flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--navy); color: #fff; font-weight: 800; font-size: 16px; margin-bottom: 18px;
+  }
+  .step h3 { font-size: 17px; }
+  .step p { font-size: 14px; }
+
+  /* ===== About ===== */
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .about-visual {
+    border-radius: 20px; min-height: 360px;
+    background: linear-gradient(150deg, var(--teal) 0%, var(--navy) 100%);
+    display: flex; align-items: center; justify-content: center; padding: 48px; text-align: center;
+  }
+  .about-visual blockquote { color: #fff; font-size: 22px; font-weight: 600; line-height: 1.45; }
+  .about-visual cite { display: block; margin-top: 18px; font-size: 14px; font-style: normal; color: rgba(255,255,255,.75); }
+
+  /* ===== CTA band ===== */
+  .cta-band {
+    background: linear-gradient(120deg, var(--teal), var(--navy));
+    border-radius: 22px; padding: 64px 56px; text-align: center; color: #fff;
+  }
+  .cta-band h2 { color: #fff; margin-bottom: 10px; }
+  .cta-band p { color: rgba(255,255,255,.85); font-size: 17px; margin-bottom: 30px; }
+
+  /* ===== Contact ===== */
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .contact-item { display: flex; gap: 14px; margin-bottom: 24px; }
+  .contact-item .icon {
+    flex: none; width: 46px; height: 46px; border-radius: 12px; background: var(--teal-light);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .contact-item strong { display: block; color: var(--navy); font-size: 15px; }
+  .contact-item span { font-size: 15px; color: var(--muted); }
+  form { display: grid; gap: 14px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  input, textarea, select {
+    width: 100%; padding: 13px 16px; border: 1px solid var(--line); border-radius: 10px;
+    font: inherit; font-size: 15px; color: var(--ink); background: var(--white);
+  }
+  input:focus, textarea:focus, select:focus { outline: 2px solid var(--teal); outline-offset: 1px; border-color: transparent; }
+  textarea { resize: vertical; min-height: 120px; }
+  .form-note { font-size: 13px; color: var(--muted); }
+
+  /* ===== Footer ===== */
+  footer { background: var(--navy); color: rgba(255,255,255,.7); padding: 56px 0 32px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 44px; }
+  footer h4 { color: #fff; font-size: 15px; margin-bottom: 16px; }
+  footer ul { list-style: none; display: grid; gap: 10px; }
+  footer a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 14px; }
+  footer a:hover { color: #7fe3d8; }
+  .footer-brand p { font-size: 14px; color: rgba(255,255,255,.65); margin-top: 14px; max-width: 300px; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.15); padding-top: 24px;
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 960px) {
+    h1 { font-size: 36px; }
+    h2 { font-size: 28px; }
+    section { padding: 64px 0; }
+    .grid-3, .steps { grid-template-columns: 1fr 1fr; }
+    .why-inner, .hipaa-inner, .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    h1 { font-size: 31px; }
+    .nav-links { display: none; }
+    .grid-3, .steps, .panel-metrics, .hipaa-badges, .form-row { grid-template-columns: 1fr; }
+    .hero { padding: 76px 0 64px; }
+    .cta-band { padding: 44px 26px; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">
+      <div class="logo-mark">K</div>
+      <div class="logo-text">Kalmed <span>Billing</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#compliance">Compliance</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a class="btn btn-primary" href="#contact">Get a Free Audit</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <h1>Your practice treats patients. <em>We make sure you get paid.</em></h1>
+    <p>Kalmed Billing is a full-service medical billing partner for independent practices and specialty clinics. We handle claims, denials, and the entire revenue cycle, so your staff can focus on care instead of paperwork.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contact">Request a Free Revenue Audit</a>
+      <a class="btn btn-outline" href="#services">Explore Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>98%</strong><span>First-pass clean claim rate</span></div>
+      <div class="stat"><strong>15+</strong><span>Specialties served</span></div>
+      <div class="stat"><strong>30%</strong><span>Average reduction in A/R days</span></div>
+      <div class="stat"><strong>100%</strong><span>HIPAA-compliant workflows</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Trust bar ===== -->
+<div class="trustbar">
+  <div class="wrap">
+    <span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      HIPAA Compliant
+    </span>
+    <span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      SOC 2-Aligned Security
+    </span>
+    <span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 14 17 22l-5-3-5 3 1.5-8"/></svg>
+      Certified Coders (AAPC / AHIMA)
+    </span>
+    <span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+      All Major EHRs Supported
+    </span>
+  </div>
+</div>
+
+<!-- ===== Services ===== -->
+<section id="services">
+  <div class="wrap">
+    <span class="eyebrow">What We Do</span>
+    <h2>Billing at the core, support across the whole practice</h2>
+    <p class="section-sub">Claims, denials, and the full revenue cycle, plus practice management, revenue consulting, and healthcare technology guidance for practices that want one partner for the business side of medicine.</p>
+    <div class="grid-3">
+      <div class="card">
+        <div class="icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3>Claims Submission &amp; Scrubbing</h3>
+        <p>Clean claims go out fast and get paid the first time. We scrub every claim for coding errors, missing modifiers, and payer-specific rules before submission.</p>
+      </div>
+      <div class="card">
+        <div class="icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+        </div>
+        <h3>Denial Management &amp; Appeals</h3>
+        <p>Denials get worked, not written off. Our team tracks every denial to its root cause, files timely appeals, and feeds the fixes back into your front-end process.</p>
+      </div>
+      <div class="card">
+        <div class="icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Revenue Cycle Management</h3>
+        <p>Full-cycle coverage: charge entry, payment posting, A/R follow-up, and monthly reporting that shows you exactly where every dollar stands.</p>
+      </div>
+      <div class="card">
+        <div class="icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3>Practice Management</h3>
+        <p>Front- and back-office operations that run like clockwork. We help with staffing workflows, scheduling, and day-to-day process design so your office keeps pace with your revenue cycle.</p>
+      </div>
+      <div class="card">
+        <div class="icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <h3>Revenue Consulting</h3>
+        <p>Performance analysis, payer contract strategy, and growth planning. We benchmark your numbers against your specialty and build a practical plan to capture more of what you earn.</p>
+      </div>
+      <div class="card">
+        <div class="icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Healthcare Technology Consulting</h3>
+        <p>EHR selection and optimization, systems integration, and workflow automation. We help you choose, implement, and get real value from the technology your practice runs on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Why us ===== -->
+<section class="why" id="why">
+  <div class="wrap why-inner">
+    <div>
+      <span class="eyebrow">Why Kalmed</span>
+      <h2>Billing done like it is our own money on the line</h2>
+      <ul class="why-list">
+        <li>
+          <div class="check">&#10003;</div>
+          <div>
+            <strong>Dedicated account team</strong>
+            You get a named billing manager and a small team that learns your practice, your payers, and your patterns. No ticket queues, no starting over every call.
+          </div>
+        </li>
+        <li>
+          <div class="check">&#10003;</div>
+          <div>
+            <strong>Transparent reporting</strong>
+            Monthly scorecards on collections, denial rates, and A/R aging, plus access to live dashboards. You always know how your revenue is performing.
+          </div>
+        </li>
+        <li>
+          <div class="check">&#10003;</div>
+          <div>
+            <strong>Specialty experience</strong>
+            Family medicine, behavioral health, physical therapy, cardiology, dermatology, and more. Specialty coding rules are where most billers lose you money.
+          </div>
+        </li>
+        <li>
+          <div class="check">&#10003;</div>
+          <div>
+            <strong>We work in your EHR</strong>
+            No rip-and-replace. We plug into your existing system, whether that is athenahealth, eClinicalWorks, Epic, DrChrono, Kareo, or another platform.
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="why-panel">
+      <h3>The cost of doing billing in-house</h3>
+      <p>Practices that outsource billing to a dedicated team typically see measurable gains in the first six months.</p>
+      <div class="panel-metrics">
+        <div class="metric"><strong>5&ndash;10%</strong><span>Average lift in collections</span></div>
+        <div class="metric"><strong>&lt; 25</strong><span>Median days in A/R</span></div>
+        <div class="metric"><strong>48 hrs</strong><span>Claim turnaround time</span></div>
+        <div class="metric"><strong>$0</strong><span>Spent on billing staff turnover</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Compliance ===== -->
+<section id="compliance">
+  <div class="wrap hipaa-inner">
+    <div>
+      <span class="eyebrow">Compliance &amp; Security</span>
+      <h2>Your patients' data, protected like it matters</h2>
+      <p class="section-sub" style="margin-bottom:24px;">Every workflow at Kalmed Billing is built around HIPAA Privacy and Security Rules. Protected health information is encrypted in transit and at rest, access is role-based and audited, and every team member completes annual HIPAA and compliance training.</p>
+      <p style="margin-bottom:8px;">We sign a Business Associate Agreement with every client, maintain documented breach-response procedures, and run regular internal security reviews. Your compliance officer can audit us any time.</p>
+    </div>
+    <div class="hipaa-badges">
+      <div class="badge">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div><strong>HIPAA</strong><span>Privacy &amp; Security Rule compliance</span></div>
+      </div>
+      <div class="badge">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <div><strong>Encryption</strong><span>AES-256 at rest, TLS 1.3 in transit</span></div>
+      </div>
+      <div class="badge">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div><strong>Access Controls</strong><span>Role-based permissions, full audit logs</span></div>
+      </div>
+      <div class="badge">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        <div><strong>Signed BAA</strong><span>Business Associate Agreement with every client</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Process ===== -->
+<section class="process" id="process">
+  <div class="wrap">
+    <span class="eyebrow">How It Works</span>
+    <h2>Onboarding in four steps</h2>
+    <p class="section-sub">Most practices are fully transitioned within two to four weeks, with no interruption to cash flow.</p>
+    <div class="steps">
+      <div class="step">
+        <h3>Free revenue audit</h3>
+        <p>We review your current billing performance and identify where revenue is leaking, at no cost and no obligation.</p>
+      </div>
+      <div class="step">
+        <h3>Transition plan</h3>
+        <p>We map your payers, EHR, and workflows, then build a transition schedule around your practice's calendar.</p>
+      </div>
+      <div class="step">
+        <h3>Go live</h3>
+        <p>Claims flow through our team from day one. Your account manager runs weekly check-ins during the first month.</p>
+      </div>
+      <div class="step">
+        <h3>Optimize</h3>
+        <p>Monthly reporting and quarterly reviews keep denial rates falling and collections climbing as we learn your practice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section id="about">
+  <div class="wrap about-inner">
+    <div class="about-visual">
+      <div>
+        <blockquote>&ldquo;We started Kalmed because small practices deserve the same billing muscle as hospital systems, without losing the personal relationship.&rdquo;</blockquote>
+        <cite>&mdash; The Kalmed Billing Team</cite>
+      </div>
+    </div>
+    <div>
+      <span class="eyebrow">About Us</span>
+      <h2>A billing partner, not a billing vendor</h2>
+      <p style="margin-bottom:16px;">Kalmed Billing was founded by healthcare operations professionals who spent years inside medical practices and saw the same story everywhere: excellent clinicians losing hard-earned revenue to claim denials, coding errors, and understaffed billing desks.</p>
+      <p style="margin-bottom:16px;">We built Kalmed to fix that. Our team combines certified coders, payer-specialist claim analysts, and credentialing experts who treat your revenue cycle like it is their own. We keep our client roster deliberately focused so every practice gets senior attention.</p>
+      <p style="margin-bottom:16px;">And because billing never happens in isolation, we have built around it: practice management, revenue consulting, and healthcare technology consulting, so the whole business side of your practice has one accountable team.</p>
+      <p>Whether you are a solo practitioner or a multi-location group, we scale a billing operation to fit, and we are on the phone when you need us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA band ===== -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Find out what your billing is really costing you</h2>
+      <p>Get a free, no-obligation revenue cycle audit. We will show you exactly where money is being left on the table.</p>
+      <a class="btn btn-navy" href="#contact" style="background:#fff;color:#0b2a4a;">Request Your Free Audit</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section id="contact" style="padding-top:0;">
+  <div class="wrap contact-inner">
+    <div>
+      <span class="eyebrow">Contact</span>
+      <h2>Let's talk about your revenue</h2>
+      <p style="margin-bottom:32px;">Reach out for a free audit, a pricing quote, or just a straight answer about whether outsourcing makes sense for your practice.</p>
+      <div class="contact-item">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <strong>Phone</strong>
+          <span>(555) 012-3456 &middot; Mon&ndash;Fri, 8am&ndash;6pm ET</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <strong>Email</strong>
+          <span>hello@kalmedbilling.com</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e7c7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <strong>Office</strong>
+          <span>100 Healthcare Way, Suite 200<br>Your City, ST 00000</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <form onsubmit="return false;">
+        <div class="form-row">
+          <input type="text" placeholder="Your name" aria-label="Your name">
+          <input type="text" placeholder="Practice name" aria-label="Practice name">
+        </div>
+        <div class="form-row">
+          <input type="email" placeholder="Email address" aria-label="Email address">
+          <input type="tel" placeholder="Phone number" aria-label="Phone number">
+        </div>
+        <select aria-label="Practice specialty">
+          <option value="">Select your specialty</option>
+          <option>Family / Internal Medicine</option>
+          <option>Behavioral Health</option>
+          <option>Physical Therapy</option>
+          <option>Cardiology</option>
+          <option>Dermatology</option>
+          <option>Pediatrics</option>
+          <option>Other / Multi-specialty</option>
+        </select>
+        <textarea placeholder="Tell us about your practice and current billing setup" aria-label="Message"></textarea>
+        <button class="btn btn-primary" type="submit" style="border:none;cursor:pointer;font-size:16px;">Send Message</button>
+        <p class="form-note">Please do not include patient information in this form. We will set up a secure channel before any PHI is shared.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#top">
+          <div class="logo-mark">K</div>
+          <div class="logo-text" style="color:#fff;">Kalmed <span>Billing</span></div>
+        </a>
+        <p>Full-service medical billing and revenue cycle management, plus practice management, revenue, and healthcare technology consulting for independent practices.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Claims Submission</a></li>
+          <li><a href="#services">Denial Management</a></li>
+          <li><a href="#services">Revenue Cycle Management</a></li>
+          <li><a href="#services">Practice Management</a></li>
+          <li><a href="#services">Revenue Consulting</a></li>
+          <li><a href="#services">Healthcare Tech Consulting</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#compliance">Compliance</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15550123456">(555) 012-3456</a></li>
+          <li><a href="mailto:hello@kalmedbilling.com">hello@kalmedbilling.com</a></li>
+          <li><a href="#contact">Request a Free Audit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Kalmed Billing LLC. All rights reserved.</span>
+      <span>HIPAA Compliant &middot; Privacy Policy &middot; Terms of Service</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
