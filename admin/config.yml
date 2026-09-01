@@ -4,6 +4,8 @@ backend:
   branch: main
   identity_url: https://auth.decapbridge.com/sites/46becac1-e879-4d6e-884d-31269b4fa6e2
   gateway_url: https://gateway.decapbridge.com
+media_folder: "assets/uploads"
+public_folder: "assets/uploads"
 site_url: https://kalmedadmin.github.io/kalmedbilling/
 locale: en
 collections:
