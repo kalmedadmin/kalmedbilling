@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "title_before": "Your practice treats patients.",
+    "title_highlight": "We make sure you get paid.",
+    "subtitle": "Kalmed Billing is a full-service medical billing partner for independent practices and specialty clinics. We handle claims, denials, and the entire revenue cycle, so your staff can focus on care instead of paperwork.",
+    "stats": [
+      {
+        "value": "98%",
+        "label": "First-pass clean claim rate"
+      },
+      {
+        "value": "15+",
+        "label": "Specialties served"
+      },
+      {
+        "value": "30%",
+        "label": "Average reduction in A/R days"
+      },
+      {
+        "value": "100%",
+        "label": "HIPAA-compliant workflows"
+      }
+    ]
+  },
+  "services": {
+    "heading": "Billing at the core, support across the whole practice",
+    "subheading": "Claims, denials, and the full revenue cycle, plus practice management, revenue consulting, and healthcare technology guidance for practices that want one partner for the business side of medicine.",
+    "items": [
+      {
+        "title": "Claims Submission & Scrubbing",
+        "text": "Clean claims go out fast and get paid the first time. We scrub every claim for coding errors, missing modifiers, and payer-specific rules before submission."
+      },
+      {
+        "title": "Denial Management & Appeals",
+        "text": "Denials get worked, not written off. Our team tracks every denial to its root cause, files timely appeals, and feeds the fixes back into your front-end process."
+      },
+      {
+        "title": "Revenue Cycle Management",
+        "text": "Full-cycle coverage: charge entry, payment posting, A/R follow-up, and monthly reporting that shows you exactly where every dollar stands."
+      },
+      {
+        "title": "Practice Management",
+        "text": "Front- and back-office operations that run like clockwork. We help with staffing workflows, scheduling, and day-to-day process design so your office keeps pace with your revenue cycle."
+      },
+      {
+        "title": "Revenue Consulting",
+        "text": "Performance analysis, payer contract strategy, and growth planning. We benchmark your numbers against your specialty and build a practical plan to capture more of what you earn."
+      },
+      {
+        "title": "Healthcare Technology Consulting",
+        "text": "EHR selection and optimization, systems integration, and workflow automation. We help you choose, implement, and get real value from the technology your practice runs on."
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Let's talk about your revenue",
+    "subtext": "Reach out for a free audit, a pricing quote, or just a straight answer about whether outsourcing makes sense for your practice.",
+    "phone_display": "(555) 012-3456",
+    "phone_hours": "Mon–Fri, 8am–6pm ET",
+    "phone_link": "+15550123456",
+    "email": "hello@kalmedbilling.com",
+    "office_line1": "100 Healthcare Way, Suite 200",
+    "office_line2": "Your City, ST 00000"
+  }
+}

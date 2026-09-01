@@ -1,0 +1,55 @@
+backend:
+  name: github
+  repo: kalmedadmin/kalmedbilling
+  branch: main
+  base_url: https://auth.decapbridge.com
+site_url: https://kalmedadmin.github.io/kalmedbilling/
+locale: en
+collections:
+  - name: site
+    label: Site Content
+    files:
+      - name: homepage
+        label: Homepage
+        file: content.json
+        format: json
+        fields:
+          - label: Hero Section
+            name: hero
+            widget: object
+            fields:
+              - { label: "Headline - first part", name: title_before, widget: string }
+              - { label: "Headline - highlighted part", name: title_highlight, widget: string }
+              - { label: Subtitle, name: subtitle, widget: text }
+              - label: Stats
+                name: stats
+                widget: list
+                summary: "{{fields.value}} - {{fields.label}}"
+                fields:
+                  - { label: Value, name: value, widget: string }
+                  - { label: Label, name: label, widget: string }
+          - label: Services Section
+            name: services
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Subheading, name: subheading, widget: text }
+              - label: Services
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: text, widget: text }
+          - label: Contact Section
+            name: contact
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Intro text, name: subtext, widget: text }
+              - { label: "Phone (display)", name: phone_display, widget: string }
+              - { label: "Phone (link, digits only with country code, e.g. +15550123456)", name: phone_link, widget: string }
+              - { label: "Phone hours note", name: phone_hours, widget: string }
+              - { label: Email, name: email, widget: string }
+              - { label: "Office address line 1", name: office_line1, widget: string }
+              - { label: "Office address line 2", name: office_line2, widget: string }
