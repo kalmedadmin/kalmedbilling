@@ -1,8 +1,9 @@
 backend:
-  name: github
+  name: git-gateway
   repo: kalmedadmin/kalmedbilling
   branch: main
-  base_url: https://auth.decapbridge.com
+  identity_url: https://auth.decapbridge.com/sites/46becac1-e879-4d6e-884d-31269b4fa6e2
+  gateway_url: https://gateway.decapbridge.com
 site_url: https://kalmedadmin.github.io/kalmedbilling/
 locale: en
 collections:
