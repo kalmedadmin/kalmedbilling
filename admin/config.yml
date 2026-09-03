@@ -6,7 +6,7 @@ backend:
   gateway_url: https://gateway.decapbridge.com
 media_folder: "assets/uploads"
 public_folder: "assets/uploads"
-site_url: https://kalmedadmin.github.io/kalmedbilling/
+site_url: https://kalmedconsulting.com/
 locale: en
 collections:
   - name: site
