@@ -2,7 +2,7 @@
   "hero": {
     "title_before": "Your practice treats patients.",
     "title_highlight": "We make sure you get paid.",
-    "subtitle": "Kalmed Billing is a full-service, AI enabled medical billing partner for independent practices and specialty clinics. We levearge the latest technologies and platforms to handle claims, denials, and the entire revenue cycle, so your staff can focus on care instead of paperwork.",
+    "subtitle": "Kalmed Consulting is a full-service, AI enabled medical billing partner for independent practices and specialty clinics. We leverage the latest technologies and platforms to handle claims, denials, and the entire revenue cycle, so your staff can focus on care instead of paperwork.",
     "stats": [
       {
         "value": "98%",
@@ -58,7 +58,7 @@
     "phone_display": "(555) 012-3456",
     "phone_hours": "Mon–Fri, 8am–6pm ET",
     "phone_link": "+15550123456",
-    "email": "hello@kalmedbilling.com",
+    "email": "hello@kalmedconsulting.com",
     "office_line1": "100 Healthcare Way, Suite 200",
     "office_line2": "Your City, ST 00000"
   }
