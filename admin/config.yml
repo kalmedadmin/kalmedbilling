@@ -7,6 +7,7 @@ backend:
 media_folder: "assets/uploads"
 public_folder: "assets/uploads"
 site_url: https://kalmedconsulting.com/
+logo_url: /favicon.svg
 locale: en
 collections:
   - name: site
